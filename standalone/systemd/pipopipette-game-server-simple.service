@@ -1,0 +1,16 @@
+[Unit]
+Description=Pipopipette: Game Server (Simple)
+After=syslog.target
+After=network.target[Service]
+
+[Service]
+User=pipoapi
+Type=simple
+ExecStart=/webapps/pipopipette/back/game-server-simple-runner
+Restart=on-failure
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pipogamesimple
+
+[Install]
+WantedBy=multi-user.target

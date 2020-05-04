@@ -1,0 +1,16 @@
+[Unit]
+Description=Pipopipette: Players Security
+After=syslog.target
+After=network.target[Service]
+
+[Service]
+User=pipoapi
+Type=simple
+ExecStart=/webapps/pipopipette/back/players-security-runner
+Restart=on-failure
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pipoplayers
+
+[Install]
+WantedBy=multi-user.target
